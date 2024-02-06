@@ -4,36 +4,32 @@
 # Description: Project 5b
 
 class Taxicab:
-    # constructor that sets the x and y coordinates and odometer to 0
     def __init__(self, x, y):
+        # Initialize the Taxicab with initial coordinates (x, y) and an odometer reading of 0
         self.__x_coord = x
         self.__y_coord = y
         self.__odometer = 0
 
-    # get method for x coordinate
     def get_x_coord(self):
+        # Return the current x-coordinate of the Taxicab
         return self.__x_coord
 
-    # get method for y coordinate
     def get_y_coord(self):
+        # Return the current y-coordinate of the Taxicab
         return self.__y_coord
 
-    # get method for getting the odometer reading
     def get_odometer(self):
+        # Return the current odometer reading of the Taxicab
         return self.__odometer
 
-    # method that updates the odometer reading and the current x coordinates
     def move_x(self, distance):
-        if distance < 0:
-            self.__odometer += (-distance)
-        else:
-            self.__odometer += (distance)
+        # Move the Taxicab horizontally (left or right) by the given distance
+        # Update the odometer reading by the absolute value of the distance
+        self.__odometer += abs(distance)
         self.__x_coord += distance
 
-    # method that updates the odometer reading and the current y coordinates
     def move_y(self, distance):
-        if distance < 0:
-            self.__odometer += (-distance)
-        else:
-            self.__odometer += (distance)
+        # Move the Taxicab vertically (up or down) by the given distance
+        # Update the odometer reading by the absolute value of the distance
+        self.__odometer += abs(distance)
         self.__y_coord += distance
